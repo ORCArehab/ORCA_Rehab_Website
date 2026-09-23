@@ -4,6 +4,7 @@ export const siteConfig = {
   description:
     "ORCA Rehab is a physician-led provider of physical medicine and rehabilitation (physiatry) and pain management services, partnering with healthcare facilities to improve patient outcomes across the continuum of care.",
   url: "https://www.orcarehab.com",
+  employeePortalUrl: "https://orca-employee-portal.vercel.app",
 };
 
 export const navLinks = [

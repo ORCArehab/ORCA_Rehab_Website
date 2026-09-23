@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Lock, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/lib/site-config";
+import { navLinks, siteConfig } from "@/lib/site-config";
 
 export function MobileNav() {
   const pathname = usePathname();
@@ -63,6 +63,13 @@ export function MobileNav() {
             <Button href="/contact" className="w-full">
               Contact Us
             </Button>
+            <a
+              href={siteConfig.employeePortalUrl}
+              className="mt-3 flex items-center justify-center gap-1.5 rounded-sm py-2 text-sm font-medium text-slate-500 hover:text-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              <Lock className="h-3.5 w-3.5" aria-hidden="true" />
+              Employee Sign In
+            </a>
           </div>
         </div>
       ) : null}

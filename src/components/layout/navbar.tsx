@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Lock } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -29,7 +30,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-5 lg:flex">
+          <a
+            href={siteConfig.employeePortalUrl}
+            className="flex items-center gap-1.5 rounded-sm text-xs font-medium text-slate-500 hover:text-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          >
+            <Lock className="h-3.5 w-3.5" aria-hidden="true" />
+            Employee Sign In
+          </a>
           <Button href="/contact">Contact Us</Button>
         </div>
 

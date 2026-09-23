@@ -92,6 +92,12 @@ export function Footer() {
             >
               SMS Terms and Conditions
             </Link>
+            <a
+              href={siteConfig.employeePortalUrl}
+              className="rounded-sm text-slate-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            >
+              Employee Sign In
+            </a>
           </div>
         </div>
       </Container>
