@@ -12,10 +12,16 @@ export function Navbar() {
       <Container className="relative flex h-16 items-center justify-between sm:h-20">
         <Link
           href="/"
-          className="flex items-center gap-2.5 rounded-md text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className="flex items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
-          <Image src="/orca-icon.png" alt="" width={44} height={39} priority className="h-9 w-auto" />
-          <span className="text-lg font-bold tracking-tight">{siteConfig.name}</span>
+          <Image
+            src="/orca-logo.png"
+            alt={siteConfig.name}
+            width={1027}
+            height={310}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">

@@ -11,9 +11,11 @@ export function Footer() {
       <Container className="py-12 sm:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2.5 text-white">
-              <Image src="/orca-icon.png" alt="" width={44} height={39} className="h-9 w-auto" />
-              <span className="text-lg font-bold tracking-tight">{siteConfig.name}</span>
+            <Link
+              href="/"
+              className="inline-flex rounded-lg bg-white px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            >
+              <Image src="/orca-logo.png" alt={siteConfig.name} width={1027} height={310} className="h-10 w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
               Physician-led physical medicine, rehabilitation, and pain management services for healthcare facilities
