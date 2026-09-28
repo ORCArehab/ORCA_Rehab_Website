@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Briefcase, Check, DollarSign, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { CtaBanner } from "@/components/ui/cta-banner";
+import { jobs } from "@/lib/jobs";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -115,12 +117,46 @@ export default function CareersPage() {
           </p>
         </div>
 
+        {jobs.length > 0 ? (
+          <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {jobs.map((job) => (
+              <li key={job.slug}>
+                <Link
+                  href={`/careers/${job.slug}`}
+                  className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:border-blue-200 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                >
+                  <h3 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600">{job.title}</h3>
+                  <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-slate-600">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                      {job.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Briefcase className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                      {job.employmentType}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <DollarSign className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                      {job.salary}
+                    </span>
+                  </p>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{job.summary}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600">
+                    View details
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
         <div className="mt-10">
           <CtaBanner
             title="Ready to Join Our Team?"
             description="If you're interested in joining ORCA Rehab, we'd love to hear from you. Apply today and become part of a team dedicated to helping patients regain function, restore independence, and improve quality of life."
             primaryLabel="Apply Today"
-            primaryHref="/contact"
+            primaryHref="/careers/apply"
           />
         </div>
       </Section>
