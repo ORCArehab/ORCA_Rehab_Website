@@ -1,9 +1,11 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Lock } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { PatientsMenu } from "@/components/layout/patients-menu";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export function Navbar() {
@@ -26,13 +28,15 @@ export function Navbar() {
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-sm text-sm font-medium text-slate-700 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              {link.label}
-            </Link>
+            <Fragment key={link.href}>
+              <Link
+                href={link.href}
+                className="rounded-sm text-sm font-medium text-slate-700 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                {link.label}
+              </Link>
+              {link.href === "/services" ? <PatientsMenu /> : null}
+            </Fragment>
           ))}
         </nav>
 

@@ -15,6 +15,11 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+// External links shown under the "Patients" menu in the header.
+export const patientLinks = [
+  { label: "New Patient Form", href: "https://orca-patient-intake-975134163036.us-west1.run.app/" },
+];
+
 export const contactInfo = {
   phone: "(714) 987-1121",
   fax: "(714) 924-3557",

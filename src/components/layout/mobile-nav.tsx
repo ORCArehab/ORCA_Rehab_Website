@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Lock, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navLinks, siteConfig } from "@/lib/site-config";
+import { navLinks, patientLinks, siteConfig } from "@/lib/site-config";
 
 export function MobileNav() {
   const pathname = usePathname();
@@ -50,13 +50,30 @@ export function MobileNav() {
         >
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-              >
-                {link.label}
-              </Link>
+              <Fragment key={link.href}>
+                <Link
+                  href={link.href}
+                  className="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                >
+                  {link.label}
+                </Link>
+                {link.href === "/services" ? (
+                  <div className="py-1">
+                    <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      Patients
+                    </p>
+                    {patientLinks.map((patientLink) => (
+                      <a
+                        key={patientLink.href}
+                        href={patientLink.href}
+                        className="block rounded-lg py-3 pl-6 pr-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                      >
+                        {patientLink.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </Fragment>
             ))}
           </nav>
           <div className="mt-4">
