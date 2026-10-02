@@ -25,7 +25,7 @@ export const contactInfo = {
   fax: "(714) 924-3557",
   email: "info@orcarehab.com",
   address: {
-    line1: "43 Corporate Park",
+    line1: "43 Corporate Park #205",
     line2: "Irvine, CA 92606",
   },
   clinicAddress: {
