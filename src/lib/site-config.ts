@@ -28,6 +28,10 @@ export const contactInfo = {
     line1: "43 Corporate Park",
     line2: "Irvine, CA 92606",
   },
+  clinicAddress: {
+    line1: "13522 Newport Ave #102",
+    line2: "Tustin, CA 92780",
+  },
   hours: [
     { days: "Monday – Friday", time: "8:00 AM – 4:00 PM" },
     { days: "Saturday – Sunday", time: "Closed" },

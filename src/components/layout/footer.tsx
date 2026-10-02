@@ -59,8 +59,18 @@ export function Footer() {
                   {contactInfo.email}
                 </a>
               </li>
-              <li>{contactInfo.address.line1}</li>
-              <li>{contactInfo.address.line2}</li>
+              <li>
+                <span className="block text-slate-300">Office</span>
+                {contactInfo.address.line1}
+                <br />
+                {contactInfo.address.line2}
+              </li>
+              <li>
+                <span className="block text-slate-300">Clinic</span>
+                {contactInfo.clinicAddress.line1}
+                <br />
+                {contactInfo.clinicAddress.line2}
+              </li>
             </ul>
           </div>
 

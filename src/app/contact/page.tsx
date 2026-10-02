@@ -79,6 +79,16 @@ export default function ContactPage() {
               </li>
               <li className="flex gap-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                  <MapPin className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">Clinic Address</p>
+                  <p className="mt-0.5 text-sm text-slate-600">{contactInfo.clinicAddress.line1}</p>
+                  <p className="text-sm text-slate-600">{contactInfo.clinicAddress.line2}</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
                   <Clock className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
