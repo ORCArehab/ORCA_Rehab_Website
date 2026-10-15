@@ -31,7 +31,7 @@ export interface Job {
 }
 
 // Same PA/NP posting for each region we hire in; edit once here to update all of them.
-// `area` is how the region reads mid-sentence, e.g. "the Inland Empire".
+// `area` is how the region reads mid-sentence, e.g. "the Indio area".
 function physicianAssistantJob(region: string, area: string, regionSlug: string): Job {
   return {
     slug: `physician-assistant-nurse-practitioner-${regionSlug}`,
@@ -171,117 +171,7 @@ function physicianAssistantJob(region: string, area: string, regionSlug: string)
 // and gets its own page at /careers/<slug>. Remove the entry once it's filled.
 export const jobs: Job[] = [
   physicianAssistantJob("Orange County", "Orange County", "orange-county"),
-  physicianAssistantJob("Inland Empire", "the Inland Empire", "inland-empire"),
-  {
-    slug: "staff-accountant",
-    title: "Staff Accountant",
-    summary:
-      "Support ORCA Rehab's financial operations, from monthly reporting and reconciliations to payroll tax compliance and revenue cycle analysis.",
-    location: "Irvine, California",
-    employmentType: "Full-Time",
-    schedule: "Monday–Friday, Day Shift",
-    salary: "$70,000–$85,000 per year",
-    salaryRange: { min: 70000, max: 85000, unit: "YEAR" },
-    workLocation: "In Person",
-    reportsTo: "Chief Financial Officer (CFO) or Practice Owners",
-    datePosted: "2026-09-28",
-    about: [
-      "ORCA Rehab is a leading inpatient rehabilitation and pain management group serving Southern California. We are seeking a detail-oriented Staff Accountant to support our financial operations and help maintain strong standards of fiscal integrity, regulatory compliance, and financial reporting.",
-      "As a member of the ORCA Rehab team, you will be expected to embody our Guest Relations philosophy, applying the Golden Rule to interactions with colleagues, partners, and the communities we serve. We foster an environment that supports professional development, recognizes achievement, and promotes a balanced work environment.",
-    ],
-    sections: [
-      {
-        title: "Key Responsibilities",
-        groups: [
-          {
-            title: "Financial Reporting & Analysis",
-            items: [
-              "Assist with the preparation and review of monthly, quarterly, and annual financial statements, including Profit & Loss statements, Balance Sheets, and Cash Flow statements.",
-              "Complete monthly bank reconciliations.",
-              "Analyze weekly and monthly collections by provider.",
-              "Review accounts receivable, collections, and billing activity.",
-              "Provide financial analysis and modeling to support leadership decisions regarding practice profitability and expense management.",
-              "Maintain the integrity of the General Ledger, Accounts Payable, Accounts Receivable, and Payroll functions.",
-              "Prepare cash-to-accrual monthly journal entries.",
-            ],
-          },
-          {
-            title: "Tax & Compliance",
-            items: [
-              "Assist with payroll tax obligations and help ensure accurate and timely federal and state filings.",
-              "Support compliance with applicable business, financial, and healthcare regulations.",
-              "Assist internal and external auditors and help maintain accurate, audit-ready financial records.",
-            ],
-          },
-          {
-            title: "Revenue Cycle Support",
-            items: [
-              "Analyze Revenue Cycle Management (RCM) activity to identify trends in claim denials and opportunities to improve collections.",
-              "Work with the Finance Manager to help ensure medical billing and insurance reimbursements are processed accurately according to contract terms.",
-              "Maintain HIPAA-compliant handling of financial and patient billing information.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Qualifications",
-        groups: [
-          {
-            title: "Education",
-            items: ["Bachelor’s degree in Accounting or Finance required, or equivalent applicable experience."],
-          },
-          {
-            title: "Certification",
-            items: ["Active California CPA certification is preferred."],
-          },
-          {
-            title: "Experience",
-            items: [
-              "2+ years of progressive accounting or finance experience preferred, ideally within healthcare or rehabilitation.",
-              "Accounting: 3 years preferred.",
-              "QuickBooks Online: 2 years preferred.",
-              "Payroll management: 2 years preferred.",
-              "Bookkeeping: 2 years preferred.",
-            ],
-          },
-          {
-            title: "Technical Skills",
-            items: [
-              "Advanced proficiency in Microsoft Excel.",
-              "Experience with QuickBooks Online or Sage.",
-              "Familiarity with EMR/EHR systems is a plus.",
-            ],
-          },
-          {
-            title: "Core Competencies",
-            items: [
-              "Exceptional attention to detail.",
-              "Strong ethical standards and discretion.",
-              "Excellent written and verbal communication skills.",
-              "Strong analytical and organizational abilities.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Compensation & Benefits",
-        groups: [
-          {
-            items: [
-              "Salary: $70,000–$85,000 per year",
-              "Employment: Full-time W-2",
-              "Profit Sharing: Opportunities available",
-              "Retirement: 401(k) plan with matching; eligibility requirements apply",
-              "Health Insurance: Available to eligible full-time team members",
-              "Paid Sick Time",
-              "Professional Development: Reimbursement for reasonable, pre-approved professional certification or continuing education expenses",
-              "Schedule: Monday–Friday with flexible day-shift hours",
-            ],
-          },
-        ],
-      },
-    ],
-  },
+  physicianAssistantJob("Indio", "the Indio area", "indio"),
 ];
 
 export function getJob(slug: string) {
