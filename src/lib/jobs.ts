@@ -172,6 +172,7 @@ function physicianAssistantJob(region: string, area: string, regionSlug: string)
 export const jobs: Job[] = [
   physicianAssistantJob("Orange County", "Orange County", "orange-county"),
   physicianAssistantJob("Indio", "the Indio area", "indio"),
+  physicianAssistantJob("Long Beach", "the Long Beach area", "long-beach"),
 ];
 
 export function getJob(slug: string) {
